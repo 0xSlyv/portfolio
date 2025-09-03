@@ -1,0 +1,16 @@
+{
+  "home": {
+    "greeting": "Hola, soy J",
+    "about": "Me encanta el diseño y la programación."
+  },
+  "navbar": {
+    "home": "/Inicio",
+    "blog": "/Blog",
+    "styles": "/Estilos",
+    "language": "/Idioma"
+  },
+  "languages": {
+    "en": "Inglés",
+    "es": "Español"
+  }
+}

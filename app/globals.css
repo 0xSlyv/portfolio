@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dynamic-accent-color: #7066A8;
+  --background-main: #ffffff;
+  --primary-text: #333333;
+  --secondary-text: #555555;
+  --hover-color: #ededed;
+  --hover-text: #242424;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --dynamic-accent-color: #a4585c;
+  --background-main: #0a0a0a;
+  --primary-text: #ededed;
+  --secondary-text: #aaaaaa;
+  --hover-color: #333333;
+  --hover-text: #c7c7c7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-theme-color: var(--dynamic-accent-color);
+  --color-main: var(--background-main);
+  --color-primary-text: var(--primary-text);
+  --color-secondary-text: var(--secondary-text);
+  --color-hover: var(--hover-color);
+  --color-text-hover: var(--hover-text);
+}
+
+@layer base {
+  body {
+    @apply bg-main text-primary-text transition-colors duration-500 px-10 md:mx-80;
+  }
+
+  article {
+    @apply py-8;
+  }
+
+  article > h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+
+
+  article > .date {
+    @apply text-secondary-text mb-8;
+  }
+
+  article > .content {
+    @apply max-w-none;
+  } 
+
+}
+
+@layer components {
+  .nav-header {
+    @apply flex justify-end w-full py-5 font-bold;
+  }
+  .nav-item {
+    @apply flex justify-between items-center px-5 cursor-pointer;
+  }
+  .animate-swipe-in {
+    animation: swipe-in 3s forwards;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes swipe-in {
+  from {
+    clip-path: polygon(-20% 0, 0 0, -30% 100%, -40% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }

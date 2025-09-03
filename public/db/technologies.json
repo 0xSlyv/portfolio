@@ -1,0 +1,16 @@
+[
+  { "name": "Next", "icon": "SiNextdotjs" },
+  { "name": "Godot", "icon": "SiGodotengine" },
+  { "name": "Angular", "icon": "SiAngular" },
+  { "name": "Java", "icon": "FaJava" },
+  { "name": "Tailwind", "icon": "SiTailwindcss" },
+  { "name": "React", "icon": "FaReact" },
+  { "name": "TypeScript", "icon": "SiTypescript" },
+  { "name": "JavaScript", "icon": "SiJavascript" },
+  { "name": "HTML5", "icon": "SiHtml5" },
+  { "name": "CSS3", "icon": "SiCss3" },
+  { "name": "Sass", "icon": "SiSass" },
+  { "name": "Python", "icon": "SiPython" },
+  { "name": "C#", "icon": "SiCsharp" },
+  { "name": "Unity", "icon": "SiUnity" }
+]

@@ -1,0 +1,23 @@
+[
+    {
+      "title": "They are watching (Game)",
+      "date": "26/02/2025",
+      "technologies": ["Godot", "Git"]
+    },
+
+    {
+      "title": "Movie-fy",
+      "date": "10/01/2025",
+      "technologies": ["React", "TypeScript"]
+    },
+    {
+      "title": "UnixPec",
+      "date": "13/07/2023",
+      "technologies": ["Java"]
+    },
+    {
+      "title": "Map-ly",
+      "date": "20/12/2024",
+      "technologies": ["Angular", "TypeScript"]
+    }
+]
