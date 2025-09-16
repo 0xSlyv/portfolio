@@ -24,6 +24,7 @@ export default async function Page({
         <div className='ml-8'>
           <h1 className="text-4xl font-bold text-theme-color">{dict.home.greeting}</h1>
           <p className="mt-4 text-theme-color">{dict.home.about}</p>
+          <span className="mt-4 text-xs text-theme-color underline">{dict.navbar.contact}</span>
           <div className='profile-badges'>
             <Popover
               trigger={

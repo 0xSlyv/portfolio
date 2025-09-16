@@ -85,7 +85,7 @@
     animation: swipe-in 3s forwards;
   }
   .profile-badges {
-    @apply flex mb-6 flex-wrap gap-2 mt-2 sm:flex sm:gap-2 sm:mt-4;
+    @apply flex mb-6 flex-wrap gap-2 sm:flex sm:gap-2;
   }
   .profile-badges .icon {
     @apply size-9 p-2 text-theme-color rounded-sm hover:text-main hover:bg-theme-color transition-colors duration-200 ease-in-out;
