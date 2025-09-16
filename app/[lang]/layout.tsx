@@ -1,15 +1,18 @@
 import Navbar from "../components/navbar";
 import { getDictionary } from "./dictionaries";
 
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }];
+}
+
 export default async function LangLayout({
     children,
     params,
   }: Readonly<{
     children: React.ReactNode;
-    params: Promise<{ lang: 'en' | 'es' }>;
+    params: { lang: 'en' | 'es' };
   }>) {
-    const { lang } = await params;
-    const dict = await getDictionary(lang);
+    const dict = await getDictionary(params.lang);
     return (
         <>
             <Navbar dict={dict} />
