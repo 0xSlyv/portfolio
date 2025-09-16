@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useEffect, useState } from 'react';
 import * as SiIcons from 'react-icons/si';
@@ -17,7 +17,7 @@ const getIcon = (iconName: string) => {
   return Icon ? <Icon /> : null;
 };
 
-const Technologies = () => {
+const Technologies = ({ dict }: { dict: any }) => {
   const [technologies, setTechnologies] = useState<{ name: string; icon: string }[]>([]);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Technologies = () => {
 
   return (
     <div className='animate-swipe-in'>
-        <h2 className='text-2xl font-bold text-center pt-8 text-theme-color'>Technologies</h2>
+        <h2 className='text-2xl font-bold text-center pt-8 text-theme-color'>{dict.title}</h2>
         <div className="flex flex-wrap justify-center gap-4 py-8">
         {technologies.map((tech) => (
             <div key={tech.name} className="flex items-center gap-2 ">

@@ -9,8 +9,15 @@
   { "name": "JavaScript", "icon": "SiJavascript" },
   { "name": "HTML5", "icon": "SiHtml5" },
   { "name": "CSS3", "icon": "SiCss3" },
-  { "name": "Sass", "icon": "SiSass" },
   { "name": "Python", "icon": "SiPython" },
-  { "name": "C#", "icon": "SiCsharp" },
-  { "name": "Unity", "icon": "SiUnity" }
+  { "name": "C#", "icon": "FaCsharp" },
+  { "name": "Unity", "icon": "SiUnity" },
+  { "name": "Flutter", "icon": "SiFlutter" },
+  { "name": "Figma", "icon": "SiFigma" },
+  { "name": "Git", "icon": "SiGit" },
+  { "name": "GitHub", "icon": "SiGithub" },
+  { "name": "Docker", "icon": "SiDocker" },
+  { "name": "Linux", "icon": "SiLinux" },
+  { "name": "MySQL", "icon": "SiMysql" },
+  { "name": "PostgreSQL", "icon": "SiPostgresql" }
 ]

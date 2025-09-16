@@ -10,11 +10,11 @@
 }
 
 .dark {
-  --dynamic-accent-color: #a4585c;
+  --dynamic-accent-color: #7066A8;
   --background-main: #0a0a0a;
   --primary-text: #ededed;
   --secondary-text: #aaaaaa;
-  --hover-color: #333333;
+  --hover-color: #161616;
   --hover-text: #c7c7c7;
 }
 
@@ -33,7 +33,7 @@
   }
 
   article {
-    @apply py-8;
+    @apply py-8 text-theme-color;
   }
 
   article>h1 {
@@ -42,7 +42,7 @@
 
 
   article>.date {
-    @apply text-secondary-text mb-8;
+    @apply mb-8 text-theme-color;
   }
 
   article>.content {
@@ -102,5 +102,33 @@
 
   to {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up-fade-in {
+  animation: slide-up-fade-in 0.3s ease-out forwards;
+}
+
+@keyframes slide-up-fade-in {
+  from {
+    transform: translateY(20px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }

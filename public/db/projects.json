@@ -1,23 +1,52 @@
 [
     {
-      "title": "They are watching (Game)",
-      "date": "26/02/2025",
-      "technologies": ["Godot"]
-    },
+    "title": "Ñawi mobile app and web",
+    "date": "20/12/2024",
+    "technologies": [
+      "Flutter",
+      "Figma",
+      "React",
+      "TypeScript",
+      "Next",
+      "Tailwind"
+    ],
+    "url": "https://github.com/PlaceOrg/Map-ly"
+  },
+  {
+    "title": "They are watching (Game)",
+    "date": "26/02/2025",
+    "technologies": [
+      "Godot", 
+      "Git"
+    ],
+    "url": "https://github.com/Brackeys-GJ/TAW_Game"
+  },
+  {
+    "title": "Movie-fy",
+    "date": "10/01/2025",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind"
+    ],
+    "url": "https://github.com/0xSlyv/Movie-fy"
+  },
+  {
+    "title": "UnixPec",
+    "date": "13/07/2023",
+    "technologies": [
+      "Java"
+    ],
+    "url": "https://github.com/0xSlyv/Unix-Pec"
+  },
+  {
+    "title": "Map-ly",
+    "date": "20/12/2024",
+    "technologies": [
+      "Angular",
+      "TypeScript"
+    ],
+    "url": "https://github.com/PlaceOrg/Map-ly"
+  }
 
-    {
-      "title": "Movie-fy",
-      "date": "10/01/2025",
-      "technologies": ["React", "TypeScript"]
-    },
-    {
-      "title": "UnixPec",
-      "date": "13/07/2023",
-      "technologies": ["Java"]
-    },
-    {
-      "title": "Map-ly",
-      "date": "20/12/2024",
-      "technologies": ["Angular", "TypeScript"]
-    }
 ]

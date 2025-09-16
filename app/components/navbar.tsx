@@ -5,7 +5,7 @@ import PopStyles from './pop-styles';
 import Link from 'next/link';
 import Popover from './pop-over'
 import { IoMdColorPalette, IoMdHome } from "react-icons/io";
-import { MdBook } from "react-icons/md";
+import { MdBook, MdContactMail } from "react-icons/md";
 import { IoLanguage } from "react-icons/io5";
 
 const Navbar = ({ dict }: { dict: any }) => {
@@ -18,13 +18,19 @@ const Navbar = ({ dict }: { dict: any }) => {
         </a>
       </nav>
 
-      <nav>
-
+      {/* <nav>
         <a href={`/${dict}/blog`} className="nav-content">
           <MdBook />
           {dict.navbar.blog}
         </a>
-      </nav>
+      </nav> */}
+
+      {/* <nav>
+        <a href="mailto:slyv.dev@gmail.com" className="nav-content">
+          <MdContactMail />
+          {dict.navbar.contact}
+        </a>
+      </nav> */}
 
       <nav>
         <Popover

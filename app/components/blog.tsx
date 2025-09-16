@@ -9,7 +9,7 @@ const Blog = ({ lang }: { lang: string }) => {
             {posts.map((p) => (
                 <div key={p.id} className='flex flex-wrap py-2 text-theme-color'>
                     <a href={`/${lang}/blog/${p.id}`} className="group transition duration-100">
-                        ⇀ {p.title} - {p.date}
+                        ✦ {p.title} - {p.date}
                         <span className="block max-w-0 group-hover:max-w-full transition-all duration-100 h-0.5 bg-theme-color"></span>
                     </a>
                 </div>

@@ -18,9 +18,9 @@ export default async function Page({
   const pfpImage = "https://avatars.githubusercontent.com/u/151973031?v=4"
 
   return (
-    <>
+    <div>
       <div className='flex flex-row items-center justify-center animate-swipe-in '>
-        <img className='rounded-full size-50 border-1 border-theme-color' src={pfpImage} alt="0xSlyv's profile picture" />
+        <img className='rounded-full size-50 border-2 border-theme-color' src={pfpImage} alt="0xSlyv's profile picture" />
         <div className='ml-8'>
           <h1 className="text-4xl font-bold text-theme-color">{dict.home.greeting}</h1>
           <p className="mt-4 text-theme-color">{dict.home.about}</p>
@@ -66,13 +66,9 @@ export default async function Page({
           </div>
         </div>
       </div>
-      <Technologies />
-      {/* <div className='flex flex-row justify-center gap-5'> */}
-      <Projects />
-      {/* <div className='h-lw w-0.5 bg-theme-color'></div> */}
+      <Technologies dict={dict.technologies} />
+      <Projects dict={dict.projects} />
       <Blog lang={lang} />
-      {/* </div> */}
-
-    </>
+    </div>
   )
 }

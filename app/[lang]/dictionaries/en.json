@@ -7,10 +7,57 @@
     "home": "Home",
     "blog": "Blog",
     "styles": "Styles",
-    "language": "Language"
+    "language": "Language",
+    "contact": "Contact"
   },
   "languages": {
     "en": "English",
     "es": "Spanish"
+  },
+  "technologies": {
+    "title": "Technologies"
+  },
+  "projects": {
+    "title": "Projects",
+    "technologies_used": "Technologies Used",
+    "view_project": "View Project",
+    "close": "Close",
+    "project_list": [
+      {
+        "title": "Ñawi mobile app and web",
+        "date": "20/12/2024",
+        "technologies": ["Flutter", "Figma", "React", "TypeScript", "Next", "Tailwind"],
+        "description": "A mobile and web application for Ñawi.",
+        "url": "https://github.com/PlaceOrg/Map-ly"
+      },
+      {
+        "title": "They are watching (Game)",
+        "date": "26/02/2025",
+        "technologies": ["Godot", "Git"],
+        "description": "A short horror game where you are being watched.",
+        "url": "https://github.com/Brackeys-GJ/TAW_Game"
+      },
+      {
+        "title": "Movie-fy",
+        "date": "10/01/2025",
+        "technologies": ["React", "TypeScript", "Tailwind"],
+        "description": "A simple movie searching app.",
+        "url": "https://github.com/0xSlyv/Movie-fy"
+      },
+      {
+        "title": "UnixPec",
+        "date": "13/07/2023",
+        "technologies": ["Java"],
+        "description": "A shell for a custom unix-like operating system.",
+        "url": "https://github.com/0xSlyv/Unix-Pec"
+      },
+      {
+        "title": "Map-ly",
+        "date": "20/12/2024",
+        "technologies": ["Angular", "TypeScript"],
+        "description": "A simple map app to get information about countries.",
+        "url": "https://github.com/PlaceOrg/Map-ly"
+      }
+    ]
   }
 }

@@ -74,12 +74,10 @@ const Popover: React.FC<PopoverProps> = ({
       {trigger}
       {isOpen && (
         <div
-          className={`
-            absolute
+          className={`absolute
             ${getPositionClasses()}
-            bg-primary rounded-lg shadow-lg p-2 z-50 // Basic styling for the menu popover
-            min-w-max // Ensure content fits
-          `}
+            bg-primary rounded-lg z-50 min-w-max`
+          }
         >
           {children}
         </div>
