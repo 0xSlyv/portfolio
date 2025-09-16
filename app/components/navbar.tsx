@@ -2,20 +2,19 @@
 
 import React from 'react'
 import PopStyles from './pop-styles';
-import Link from 'next/link';
 import Popover from './pop-over'
 import { IoMdColorPalette, IoMdHome } from "react-icons/io";
-import { MdBook, MdContactMail } from "react-icons/md";
 import { IoLanguage } from "react-icons/io5";
+import Link from 'next/link';
 
 const Navbar = ({ dict }: { dict: any }) => {
   return (
     <header className="nav-header">
       <nav>
-        <a href="/" className="nav-content">
+        <Link href="/" className="nav-content">
           <IoMdHome />
           {dict.navbar.home}
-        </a>
+        </Link>
       </nav>
 
       {/* <nav>

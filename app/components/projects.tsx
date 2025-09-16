@@ -29,7 +29,14 @@ interface Project {
   url: string;
 }
 
-const Projects = ({ dict }: { dict: any }) => {
+interface DictionaryProps {
+  title: string;
+  project_list: Project[];
+  technologies_used: string;
+  view_project: string;
+}
+
+const Projects = ({ dict }: { dict: DictionaryProps }) => {
   const [technologies, setTechnologies] = useState<
     { name: string; icon: string }[]
   >([]);

@@ -17,7 +17,11 @@ const getIcon = (iconName: string) => {
   return Icon ? <Icon /> : null;
 };
 
-const Technologies = ({ dict }: { dict: any }) => {
+interface DictionaryProps {
+  title: string;
+}
+
+const Technologies = ({ dict }: { dict: DictionaryProps }) => {
   const [technologies, setTechnologies] = useState<{ name: string; icon: string }[]>([]);
 
   useEffect(() => {
