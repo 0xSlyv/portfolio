@@ -8,11 +8,12 @@ export async function generateStaticParams() {
 export default async function LangLayout({
     children,
     params,
-  }: Readonly<{
+  }: {
     children: React.ReactNode;
-    params: { lang: 'en' | 'es' };
-  }>) {
-    const dict = await getDictionary(params.lang);
+    params: Promise<{ lang: string }>;
+  }) {
+    const { lang } = await params;
+    const dict = await getDictionary(lang as 'en' | 'es');
     return (
         <>
             <Navbar dict={dict} />

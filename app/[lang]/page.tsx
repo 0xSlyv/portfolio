@@ -15,9 +15,10 @@ export async function generateStaticParams() {
 export default async function Page({
   params,
 }: {
-  params: { lang: 'en' | 'es' }
+  params: Promise<{ lang: string }>;
 }) {
-  const dict = await getDictionary(params.lang)
+  const { lang } = await params;
+  const dict = await getDictionary(lang as 'en' | 'es');
   const pfpImage = "https://avatars.githubusercontent.com/u/151973031?v=4"
 
   return (
@@ -72,7 +73,7 @@ export default async function Page({
       </div>
       <Technologies dict={dict.technologies} />
       <Projects dict={dict.projects} />
-      <Blog lang={params.lang} />
+      <Blog lang={lang} />
     </div>
   )
 }
