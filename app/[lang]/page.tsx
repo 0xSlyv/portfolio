@@ -8,13 +8,16 @@ import { FaXTwitter } from "react-icons/fa6";
 import { MdContentCopy, MdArrowOutward } from "react-icons/md";
 import CopyComponent from '../components/copy-component'
 
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }];
+}
+
 export default async function Page({
   params,
 }: {
-  params: Promise<{ lang: 'en' | 'es' }>
+  params: { lang: 'en' | 'es' }
 }) {
-  const { lang } = await params
-  const dict = await getDictionary(lang)
+  const dict = await getDictionary(params.lang)
   const pfpImage = "https://avatars.githubusercontent.com/u/151973031?v=4"
 
   return (
@@ -69,7 +72,7 @@ export default async function Page({
       </div>
       <Technologies dict={dict.technologies} />
       <Projects dict={dict.projects} />
-      <Blog lang={lang} />
+      <Blog lang={params.lang} />
     </div>
   )
 }
