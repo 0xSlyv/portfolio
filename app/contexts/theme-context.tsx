@@ -37,10 +37,16 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [selectedAccent, setSelectedAccent] = useState<keyof typeof ACCENT_COLORS>('purple');
 
-  const applyAccentColorToDom = (accentName: keyof typeof ACCENT_COLORS) => {
-    const hexColor = ACCENT_COLORS[accentName];
-    document.documentElement.style.setProperty('--dynamic-accent-color', hexColor);
-  };
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    setIsDarkMode(isDark);
+
+    const accent = getComputedStyle(document.documentElement).getPropertyValue('--dynamic-accent-color');
+    const accentName = Object.keys(ACCENT_COLORS).find(key => ACCENT_COLORS[key as keyof typeof ACCENT_COLORS] === accent) as keyof typeof ACCENT_COLORS;
+    if (accentName) {
+      setSelectedAccent(accentName);
+    }
+  }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => {
@@ -57,42 +63,11 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   };
 
   const setAccent = (accentName: keyof typeof ACCENT_COLORS) => {
+    const hexColor = ACCENT_COLORS[accentName];
+    document.documentElement.style.setProperty('--dynamic-accent-color', hexColor);
+    localStorage.setItem('accent', hexColor);
     setSelectedAccent(accentName);
-    localStorage.setItem('accent', accentName);
   };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    let initialMode = false;
-    if (savedTheme === 'dark') {
-      initialMode = true;
-    } else if (savedTheme === 'light') {
-      initialMode = false;
-    } else if (prefersDark) {
-      initialMode = true;
-    }
-    if (initialMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    setIsDarkMode(initialMode);
-
-    // Load Accent Color
-    const savedAccent = localStorage.getItem('accent') as keyof typeof ACCENT_COLORS | null;
-    if (savedAccent && ACCENT_COLORS[savedAccent]) {
-      setSelectedAccent(savedAccent);
-      applyAccentColorToDom(savedAccent);
-    } else {
-      setSelectedAccent('purple');
-      applyAccentColorToDom('purple');
-    }
-  }, []);
-
-  useEffect(() => {
-    applyAccentColorToDom(selectedAccent);
-  }, [selectedAccent]);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode, selectedAccent, setAccent }}>
@@ -104,4 +79,27 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   return context;
+};
+
+export const ThemeScript = () => {
+  const themeScript = `
+    (function() {
+      const theme = localStorage.getItem('theme');
+      const accent = localStorage.getItem('accent');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (theme === 'dark' || (!theme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+      const accentColor = accent ? accent : '${ACCENT_COLORS['purple']}';
+      document.documentElement.style.setProperty('--dynamic-accent-color', accentColor);
+    })()
+  `;
+
+  return (
+    <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+  );
 };

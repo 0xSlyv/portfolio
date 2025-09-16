@@ -1,13 +1,13 @@
 {
   "home": {
-    "greeting": "Hello, I’m J",
+    "greeting": "Hello, I’m J.",
     "about": "I love design and programming."
   },
   "navbar": {
-    "home": "/Home",
-    "blog": "/Blog",
-    "styles": "/Styles",
-    "language": "/Language"
+    "home": "Home",
+    "blog": "Blog",
+    "styles": "Styles",
+    "language": "Language"
   },
   "languages": {
     "en": "English",

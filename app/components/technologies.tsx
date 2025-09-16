@@ -27,11 +27,11 @@ const Technologies = () => {
   }, []);
 
   return (
-    <div>
-        <h2 className='text-2xl text-primary-text font-bold text-center pt-8'>Technologies</h2>
+    <div className='animate-swipe-in'>
+        <h2 className='text-2xl font-bold text-center pt-8 text-theme-color'>Technologies</h2>
         <div className="flex flex-wrap justify-center gap-4 py-8">
         {technologies.map((tech) => (
-            <div key={tech.name} className="flex items-center gap-2">
+            <div key={tech.name} className="flex items-center gap-2 ">
             <div className="text-sm text-theme-color">{getIcon(tech.icon)}</div>
             <span className="text-theme-color">{tech.name}</span>
             </div>

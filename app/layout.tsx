@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { VT323 } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./contexts/theme-context";
+import { ThemeProvider, ThemeScript } from "./contexts/theme-context";
 
 const vt323 = VT323({
   variable: "--font-vt323",
@@ -20,7 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
       <body
         className={`${vt323.variable} antialiased bg-main text-primary-text`}
       >

@@ -1,24 +1,27 @@
 import React from 'react'
-import { ACCENT_COLORS, useTheme } from '../../contexts/theme-context'
+import { ACCENT_COLORS, useTheme } from '../contexts/theme-context'
+import { MdOutlineLightMode } from "react-icons/md";
+import { MdOutlineNightlight } from "react-icons/md";
+import { BsCheckLg } from "react-icons/bs";
 
 const PopStyles = () => {
     const { isDarkMode, toggleDarkMode, selectedAccent, setAccent } = useTheme();
     return (
 
-        <>
-            <span className="text-secondary-text text-xs mb-1 px-2 block">Light/Dark Mode</span>
+        <div className="bg-hover p-4 rounded-md">
+            <span className="text-secondary-text text-xs mb-3 px-2 block">Light/Dark Mode</span>
             <div onClick={toggleDarkMode}
-                className="display-mode-button mb-2 w-full "
+                className="display-mode-button mb-2 w-full cursor-pointer py-2 bg-primary-text rounded-3xl text-main"
                 aria-label="Toggle Dark Mode">
                 {isDarkMode ?
                     <div className='flex justify-center items-center gap-2'>
-                        {/* <Moon className='icon size-5' /> */}
-                        <p className='text-primary-text text-xs font-bold'>Dark mode</p>
+                        <MdOutlineLightMode />
+                        <p className='text-xs font-bold'>Light mode</p>
                     </div>
                     :
                     <div className='flex justify-center items-center gap-2'>
-                        {/* <Sun className='icon size-5' /> */}
-                        <p className='text-primary-text text-xs font-bold'>Light mode</p>
+                        <MdOutlineNightlight />
+                        <p className='text-xs font-bold'>Dark mode</p>
                     </div>
                 }
             </div>
@@ -38,13 +41,12 @@ const PopStyles = () => {
                         title={`Select ${name} accent`}
                     >
                         {selectedAccent === name && (
-                            // <Check className="size-4 text-white drop-shadow" />
-                            <div>hi</div>
+                            <BsCheckLg className='text-white' />
                         )}
                     </button>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 

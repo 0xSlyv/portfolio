@@ -1,4 +1,4 @@
-import Navbar from "./components/navbar";
+import Navbar from "../components/navbar";
 import { getDictionary } from "./dictionaries";
 
 export default async function LangLayout({

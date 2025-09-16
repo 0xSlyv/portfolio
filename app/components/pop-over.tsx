@@ -6,7 +6,7 @@ interface PopoverProps {
   trigger: ReactNode;
   children: ReactNode;
   mode?: 'hover' | 'click';
-  position?: 'right-top' | 'left-top' | 'right-bottom' | 'left-bottom';
+  position?: 'right-top' | 'left-top' | 'right-bottom' | 'left-bottom' | 'top-center' | 'bottom-center';
 }
 
 const Popover: React.FC<PopoverProps> = ({
@@ -57,6 +57,8 @@ const Popover: React.FC<PopoverProps> = ({
       case 'left-bottom': return 'top-full left-0 mt-2';
       case 'right-top': return 'bottom-full right-0 mb-2';
       case 'right-bottom': return 'top-full right-0 mt-2';
+      case 'top-center': return 'bottom-full left-1/2 transform -translate-x-1/2 mb-2';
+      case 'bottom-center': return 'top-full left-1/2 transform -translate-x-1/2 mt-2';
       default: return 'top-full right-0 mt-2';
     }
   };
