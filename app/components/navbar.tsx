@@ -7,7 +7,19 @@ import { IoMdColorPalette, IoMdHome } from "react-icons/io";
 import { IoLanguage } from "react-icons/io5";
 import Link from 'next/link';
 
-const Navbar = ({ dict }: { dict: any }) => {
+interface NavbarDictionary {
+  navbar: {
+    home: string;
+    styles: string;
+    language: string;
+  };
+  languages: {
+    en: string;
+    es: string;
+  };
+}
+
+const Navbar = ({ dict }: { dict: NavbarDictionary }) => {
   return (
     <header className="nav-header">
       <nav>
