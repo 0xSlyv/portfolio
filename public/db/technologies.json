@@ -19,5 +19,7 @@
   { "name": "Docker", "icon": "SiDocker" },
   { "name": "Linux", "icon": "SiLinux" },
   { "name": "MySQL", "icon": "SiMysql" },
-  { "name": "PostgreSQL", "icon": "SiPostgresql" }
+  { "name": "PostgreSQL", "icon": "SiPostgresql" },
+  { "name": "PowerShell", "icon": "SiPowershell" },
+  { "name": "CSS", "icon": "SiCss3" }
 ]

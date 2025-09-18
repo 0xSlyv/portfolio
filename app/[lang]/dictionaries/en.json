@@ -1,7 +1,7 @@
 {
   "home": {
     "greeting": "Hello, I’m J.",
-    "about": "I love design and programming."
+    "about": "[Slyv on the ethernet] I love programming and design."
   },
   "navbar": {
     "home": "Home",
@@ -24,38 +24,71 @@
     "close": "Close",
     "project_list": [
       {
+        "title": "Dark Amoled Theme for Arch Linux with Hyprland",
+        "date": "20/05/2025",
+        "technologies": ["Linux", "CSS"],
+        "description": "A sleek collection of dotfiles crafted for Arch Linux, my love letter for AMOLED aesthetics.",
+        "url": "https://github.com/0xSlyv/.arch-dot-files"
+      },
+      {
+        "title": "Lively Captions - Translate and Caption in Real-Time for desktop",
+        "date": "20/06/2025",
+        "technologies": ["Python"],
+        "description": "Lively Captions is a real-time speech transcription and translation desktop app built with Python. It captures your voice through a microphone or your computer audio, transcribes it using Whisper, and and also translates it into other languages.",
+        "url": "https://github.com/0xSlyv/Lively-Captions"
+      },
+      {
         "title": "Ñawi mobile app and web",
-        "date": "20/12/2024",
+        "date": "20/05/2024",
         "technologies": ["Flutter", "Figma", "React", "TypeScript", "Next", "Tailwind"],
-        "description": "A mobile and web application for Ñawi.",
+        "description": "A managment application for students reports developed for android and web.",
         "url": "https://github.com/PlaceOrg/Map-ly"
+      },
+      {
+        "title": "Minimal Windows Terminal Configuration Script",
+        "date": "16/08/2025",
+        "technologies": ["PowerShell"],
+        "description": "A minimal powershell script to configure Windows Terminal with a custom theme, font, and settings.",
+        "url": "https://github.com/0xSlyv/minimal-terminal-config"
       },
       {
         "title": "They are watching (Game)",
         "date": "26/02/2025",
-        "technologies": ["Godot", "Git"],
-        "description": "A short horror game where you are being watched.",
+        "technologies": [
+          "Godot",
+          "Git"
+        ],
+        "description": "A short demo game made in Godot made in collaboration with StraGeo Studios for Brackeys GameJam 2025 - 1.",
         "url": "https://github.com/Brackeys-GJ/TAW_Game"
       },
       {
         "title": "Movie-fy",
         "date": "10/01/2025",
-        "technologies": ["React", "TypeScript", "Tailwind"],
-        "description": "A simple movie searching app.",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Tailwind"
+        ],
+        "description": "A simple movie searching app with TMDB API consumption.",
         "url": "https://github.com/0xSlyv/Movie-fy"
       },
       {
         "title": "UnixPec",
         "date": "13/07/2023",
-        "technologies": ["Java"],
-        "description": "A shell for a custom unix-like operating system.",
+        "technologies": [
+          "Java"
+        ],
+        "description": "A minimal opinionated application made with Java for daily tasks organization.",
         "url": "https://github.com/0xSlyv/Unix-Pec"
       },
       {
         "title": "Map-ly",
         "date": "20/12/2024",
-        "technologies": ["Angular", "TypeScript"],
-        "description": "A simple map app to get information about countries.",
+        "technologies": [
+          "Angular",
+          "TypeScript"
+        ],
+        "description": "A demo map application for marking danger areas signaling dangerous areas from reliable fonts.",
         "url": "https://github.com/PlaceOrg/Map-ly"
       }
     ]

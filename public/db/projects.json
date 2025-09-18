@@ -1,7 +1,24 @@
 [
-    {
+  {
+    "title": "Dark Amoled Theme for Arch Linux with Hyprland",
+    "date": "20/05/2025",
+    "technologies": [
+      "Linux",
+      "CSS"
+    ],
+    "url": "https://github.com/0xSlyv/.arch-dot-files"
+  },
+  {
+    "title": "Lively Captions - Translate and Caption in Real-Time for desktop",
+    "date": "20/06/2025",
+    "technologies": [
+      "Python"
+    ],
+    "url": "https://github.com/0xSlyv/Lively-Captions"
+  },
+  {
     "title": "Ñawi mobile app and web",
-    "date": "20/12/2024",
+    "date": "20/05/2024",
     "technologies": [
       "Flutter",
       "Figma",
@@ -13,10 +30,18 @@
     "url": "https://github.com/PlaceOrg/Map-ly"
   },
   {
+    "title": "Minimal Windows Terminal Configuration Script",
+    "date": "16/08/2025",
+    "technologies": [
+      "PowerShell"
+    ],
+    "url": "https://github.com/0xSlyv/minimal-terminal-config"
+  },
+  {
     "title": "They are watching (Game)",
     "date": "26/02/2025",
     "technologies": [
-      "Godot", 
+      "Godot",
       "Git"
     ],
     "url": "https://github.com/Brackeys-GJ/TAW_Game"
@@ -48,5 +73,4 @@
     ],
     "url": "https://github.com/PlaceOrg/Map-ly"
   }
-
 ]
