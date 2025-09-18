@@ -25,7 +25,7 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body
-        className={`${vt323.variable} antialiased bg-main text-primary-text`}
+        className={`${vt323.variable} antialiased bg-main text-primary-text mb-8`}
       >
         <ThemeProvider>
           {children}
