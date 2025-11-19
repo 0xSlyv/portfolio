@@ -23,12 +23,13 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 };
 
-export default function RootLayout({ children, params }: Props) {
+export default async function RootLayout({ children, params }: Props) {
+  const { lang } = await params;
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-background text-foreground relative`}>
         <Providers>
           {children}
