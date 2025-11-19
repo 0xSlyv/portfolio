@@ -1,6 +1,6 @@
 'use client';
 
-import { I18nProvider, useI18n } from "@/i18n/I18nProvider";
+import { I18nProvider } from "@/i18n/I18nProvider";
 import { ThemeProvider } from "@/contexts/theme-context";
 import CursorFollower from "@/_components/ui/cursor-follower";
 import { useState, useEffect } from 'react';

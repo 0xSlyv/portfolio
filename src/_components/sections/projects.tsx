@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Popover from "../ui/pop-over";
 import { getTechIcon } from "../ui/icon-mappings";
 import { useI18n } from "@/i18n/I18nProvider";
@@ -16,14 +16,7 @@ interface Project {
 
 const Projects = () => {
   const { t } = useI18n();
-  const [technologies, setTechnologies] = useState<
-    { name: string; icon: string }[]
-  >([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  useEffect(() => {
-    fetch("/db/technologies.json").then((res) => res.json()).then(setTechnologies);
-  }, []);
 
   const techNameMap: { [key: string]: string } = {
     'tailwind': 'Tailwind CSS',
@@ -61,16 +54,16 @@ const Projects = () => {
   const getTechIconForProject = (techName: string, size: string = 'text-2xl') => {
     // First try to find a mapped name
     const mappedName = techNameMap[techName.toLowerCase()] || techName;
-    
+
     // Get the icon with the mapped name
     const icon = getTechIcon(mappedName, `${size} text-theme-color hover:text-theme-color/90 transition-colors`);
-    
+
     // If no icon found, log a warning and return null to use the fallback
     if (!icon) {
       console.warn(`No icon found for technology: ${techName} (mapped to: ${mappedName})`);
       return null;
     }
-    
+
     return icon;
   };
 
@@ -94,52 +87,52 @@ const Projects = () => {
           }}
           className="inline-block w-full"
         >
-        <div
-          className="flex flex-col sm:flex-row sm:items-center py-3 px-4 sm:px-6 transition-all duration-300 ease-in-out hover:bg-theme-color/10 hover:border-theme-color/50 border border-transparent rounded-lg mx-2 sm:mx-5 text-theme-color group"
-        >
-          <div className="flex-1 min-w-0">
+          <div
+            className="flex flex-col sm:flex-row sm:items-center py-3 px-4 sm:px-6 transition-all duration-300 ease-in-out hover:bg-theme-color/10 hover:border-theme-color/50 border border-transparent rounded-lg mx-2 sm:mx-5 text-theme-color group"
+          >
+            <div className="flex-1 min-w-0">
               <span className="flex items-center inline">
                 <span className="opacity-70 group-hover:opacity-100 transition-opacity pr-2">↗</span>
                 <span className="font-medium">{p.title}</span>
                 <span className="text-sm opacity-70 whitespace-nowrap"> - </span>
                 <span className="text-sm opacity-70 whitespace-nowrap">{p.date}</span>
               </span>
-          </div>
-          
-          <div className="mt-2 sm:mt-0 sm:ml-4 flex-shrink-0">
-            <div className="flex items-center gap-1.5">
-              <div className="flex items-center flex-wrap gap-1.5">
-                {p.technologies.map((techName, index) => {
-                  const icon = getTechIconForProject(techName, 'text-sm');
-                  return (
-                    <React.Fragment key={techName}>
-                      <Popover
-                        trigger={
-                          <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-main/5 hover:bg-theme-color/10 border border-transparent transition-colors duration-200 flex-shrink-0">
-                            {icon || (
-                              <span className="text-xs text-theme-color/80 font-mono">
-                                {techName.split(' ').map(w => w[0]).join('').toUpperCase().substring(0, 2)}
-                              </span>
-                            )}
+            </div>
+
+            <div className="mt-2 sm:mt-0 sm:ml-4 flex-shrink-0">
+              <div className="flex items-center gap-1.5">
+                <div className="flex items-center flex-wrap gap-1.5">
+                  {p.technologies.map((techName, index) => {
+                    const icon = getTechIconForProject(techName, 'text-sm');
+                    return (
+                      <React.Fragment key={techName}>
+                        <Popover
+                          trigger={
+                            <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-main/5 hover:bg-theme-color/10 border border-transparent transition-colors duration-200 flex-shrink-0">
+                              {icon || (
+                                <span className="text-xs text-theme-color/80 font-mono">
+                                  {techName.split(' ').map(w => w[0]).join('').toUpperCase().substring(0, 2)}
+                                </span>
+                              )}
+                            </div>
+                          }
+                          position="top-center"
+                        >
+                          <div className="bg-hover text-primary-text text-sm px-3 py-1.5 rounded-lg border border-hover/50 shadow-lg backdrop-blur-sm">
+                            {techName}
                           </div>
-                        }
-                        position="top-center"
-                      >
-                        <div className="bg-hover text-primary-text text-sm px-3 py-1.5 rounded-lg border border-hover/50 shadow-lg backdrop-blur-sm">
-                          {techName}
-                        </div>
-                      </Popover>
-                      {index < p.technologies.length - 1 && (
-                        <span className="text-sm text-theme-color/20 group-hover:text-theme-color/40 transition-colors duration-200 hidden sm:inline">•</span>
-                      )}
-                    </React.Fragment>
-                  );
-                })}
+                        </Popover>
+                        {index < p.technologies.length - 1 && (
+                          <span className="text-sm text-theme-color/20 group-hover:text-theme-color/40 transition-colors duration-200 hidden sm:inline">•</span>
+                        )}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="w-full/2 border border-dashed border-subtle mx-5 md:mx-10"></div>
+          <div className="w-full/2 border border-dashed border-subtle mx-5 md:mx-10"></div>
         </a>
       ))}
 
@@ -161,8 +154,8 @@ const Projects = () => {
                 {selectedProject.technologies.map((techName) => {
                   const icon = getTechIconForProject(techName, 'text-2xl');
                   return (
-                    <div 
-                      key={techName} 
+                    <div
+                      key={techName}
                       className="flex items-center gap-3 bg-hover/50 hover:bg-hover/80 p-3 rounded-lg transition-all duration-200 border border-hover/30 hover:border-theme-color/30"
                     >
                       <div className="flex items-center justify-center w-8 h-8 bg-main/20 rounded-md">
