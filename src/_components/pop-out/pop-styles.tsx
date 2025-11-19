@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import { ACCENT_COLORS, useTheme } from '../../contexts/theme-context'
 import { MdOutlineLightMode, MdOutlineNightlight, MdClose } from "react-icons/md";
