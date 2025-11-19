@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dynamic-accent-color: #7066A8;
+  --background-main: #F9F6EE;
+  --primary-text: #333333;
+  --secondary-text: #555555;
+  --hover-color: #ededed;
+  --hover-text: #242424;
+  --subtle-color: #333;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --dynamic-accent-color: #7066A8;
+  --background-main: #0a0a0a;
+  --primary-text: #ededed;
+  --secondary-text: #aaaaaa;
+  --hover-color: #161616;
+  --hover-text: #c7c7c7;
+  --subtle-color: #333;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-theme-color: var(--dynamic-accent-color);
+  --color-main: var(--background-main);
+  --color-primary-text: var(--primary-text);
+  --color-secondary-text: var(--secondary-text);
+  --color-hover: var(--hover-color);
+  --color-text-hover: var(--hover-text);
+  --color-subtle: var(--subtle-color);
+}
+
+/* Text selection styles */
+::selection {
+  @apply bg-primary-text/20 text-primary-text;
+}
+
+/* For Firefox */
+::-moz-selection {
+  @apply bg-primary-text/20 text-primary-text;
+}
+
+
+@layer base {
+  body {
+    @apply bg-main text-primary-text transition-colors duration-500 px-2 md:px-10 md:mx-20;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  article {
+    @apply py-8 text-theme-color;
+  }
+
+  article>h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+
+  article>.date {
+    @apply mb-8 text-theme-color;
+  }
+
+  article>.content {
+    @apply max-w-none;
+  }
+
+  article>.content p {
+    @apply mb-4;
+  }
+
+  article>.content h2 {
+    @apply text-3xl font-bold mb-4;
+  }
+
+  article>.content h3 {
+    @apply text-2xl font-bold mb-4;
+  }
+
+  article>.content ul {
+    @apply list-disc list-inside mb-4;
+  }
+
+  article>.content ol {
+    @apply list-decimal list-inside mb-4;
+  }
+
+  article>.content a {
+    @apply text-theme-color hover:underline;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+
+  .animate-swipe-in {
+    animation: swipe-in 3s forwards;
+  }
+  .profile-badges {
+    @apply flex mb-6 flex-wrap gap-2 sm:flex sm:gap-2;
+  }
+  .icon {
+    @apply size-9 p-2 rounded-sm hover:text-main hover:bg-theme-color transition-colors duration-200 ease-in-out;
+  }
+  .speech-bubble {
+    @apply relative px-4 py-2 text-sm text-primary-text bg-hover rounded-sm flex items-center gap-2;
+  }
+}
+
+@keyframes swipe-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up-fade-in {
+  animation: slide-up-fade-in 0.3s ease-out forwards;
+}
+
+@keyframes slide-up-fade-in {
+  from {
+    transform: translateY(20px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
